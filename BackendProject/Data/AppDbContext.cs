@@ -16,5 +16,7 @@ namespace BackendProject.Data
 
         public DbSet<Sliders> Sliders { get; set; }
         public DbSet<ServiceArea> ServiceAreas { get; set; }
+        public DbSet<Settings> Settings { get; set; }
+        public DbSet<AboutArea> AboutAreas { get; set; }
     }
 }

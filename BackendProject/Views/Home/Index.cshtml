@@ -1,35 +1,34 @@
 ﻿@model HomeVM
-
 <!-- Background Area Start -->
 
-    <section id="slider-container" class="slider-area two">
-        <div class="slider-owl owl-theme owl-carousel">
-            <!-- Start Slingle Slide -->
-            @foreach (var slider in Model.Sliders)
-            {
-                <div class="single-slide item" style="background-image: url(assets/img/slider/@slider.Image)">
-                    <!-- Start Slider Content -->
-                    <div class="slider-content-area">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <div class="slide-content-wrapper">
-                                        <div class="slide-content text-center">
-                                            <h2>@slider.Header</h2>
-                                            <p>@slider.Description</p>
-                                            <a class="default-btn" href="about.html">Learn more</a>
-                                        </div>
+<section id="slider-container" class="slider-area two">
+    <div class="slider-owl owl-theme owl-carousel">
+        <!-- Start Slingle Slide -->
+        @foreach (var slider in Model.Sliders)
+        {
+            <div class="single-slide item" style="background-image: url(assets/img/slider/@slider.Image)">
+                <!-- Start Slider Content -->
+                <div class="slider-content-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="slide-content-wrapper">
+                                    <div class="slide-content text-center">
+                                        <h2>@slider.Header</h2>
+                                        <p>@slider.Description</p>
+                                        <a class="default-btn" href="about.html">Learn more</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Start Slider Content -->
                 </div>
-            }
-             <!-- End Slingle Slide -->
-        </div>
-    </section>
+                <!-- Start Slider Content -->
+            </div>
+        }
+        <!-- End Slingle Slide -->
+    </div>
+</section>
 
 
 <!-- Background Area End -->
@@ -50,27 +49,7 @@
     </div>
 </div>
 <!-- Service End -->
-<!-- About Start -->
-<div class="about-area pb-155">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="about-content">
-                    <h2>WELCOME TO <span>EDUHOME</span></h2>
-                    <p>I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings  the master-builder of humanit happiness</p>
-                    <p class="hidden-sm">I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system</p>
-                    <a class="default-btn" href="about.html">view courses</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="about-img/">
-                    <img src="~/assets/img/about/about.png" alt="about">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- About End -->
+@await Component.InvokeAsync("AboutArea")
 <!-- Courses Area Start -->
 <div class="courses-area two pt-150 pb-150 text-center">
     <div class="container">
