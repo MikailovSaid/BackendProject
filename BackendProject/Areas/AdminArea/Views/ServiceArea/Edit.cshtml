@@ -1,0 +1,18 @@
+﻿@model ServiceArea
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Header"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Header" maxlength="500" placeholder="Slider header">
+
+            <label asp-for="Description"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Description" maxlength="500" placeholder="Slider Decription">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
