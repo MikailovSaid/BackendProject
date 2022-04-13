@@ -9,6 +9,10 @@
     <Compile Remove="Migrations\20220412074545_CreateSettingsTable.Designer.cs" />
     <Compile Remove="Migrations\20220412101704_CreateAboutAreaTable.cs" />
     <Compile Remove="Migrations\20220412101704_CreateAboutAreaTable.Designer.cs" />
+    <Compile Remove="Migrations\20220413055454_CreateCourseTable.cs" />
+    <Compile Remove="Migrations\20220413055454_CreateCourseTable.Designer.cs" />
+    <Compile Remove="Migrations\20220413072753_CreateCourseFeatureTable.cs" />
+    <Compile Remove="Migrations\20220413072753_CreateCourseFeatureTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

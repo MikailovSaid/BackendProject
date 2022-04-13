@@ -1,4 +1,4 @@
-﻿@model List<ServiceArea>
+﻿@model List<Category>
 @{
     ViewData["Title"] = "Index";
     int count = 1;
@@ -21,7 +21,7 @@
                             Number
                         </th>
                         <th>
-                            Header
+                            Name
                         </th>
                         <th>
                             Settings
@@ -29,23 +29,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var service in Model)
+                    @foreach (var category in Model)
                     {
                         <tr>
                             <td>
                                 @count
                             </td>
                             <td>
-                                <h5>@service.Header</h5>
+                                <h5>@category.Name</h5>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@service.Id">
+                                <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@category.Id">
                                     <i class="mdi mdi-account-box-outline"></i>
                                 </a>
-                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@service.Id">
+                                <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@category.Id">
                                     <i class="mdi mdi-table-edit"></i>
                                 </a>
-                                <form style="display:inline-block" method="post" asp-action="Delete" asp-route-id="@service.Id">
+                                <form style="display:inline-block" method="post" asp-action="Delete" asp-route-id="@category.Id">
                                     <button class="btn btn-danger btn-sm" type="submit">
                                         <i class="mdi mdi-delete-forever"></i>
                                     </button>

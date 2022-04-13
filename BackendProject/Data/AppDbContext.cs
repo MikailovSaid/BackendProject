@@ -18,5 +18,8 @@ namespace BackendProject.Data
         public DbSet<ServiceArea> ServiceAreas { get; set; }
         public DbSet<Settings> Settings { get; set; }
         public DbSet<AboutArea> AboutAreas { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseFeature> CourseFeatures { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
