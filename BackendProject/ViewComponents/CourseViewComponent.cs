@@ -24,14 +24,14 @@ namespace BackendProject.ViewComponents
             if (categoryId is null || categoryId == 0)
             {
                  courses = await _context.Courses
-                    .Include(m => m.CourseFeatures)
+                    .Include(m => m.CourseFeature)
                     .Take(newTake)
                     .ToListAsync();
             }
             else
             {
                  courses = await _context.Courses
-                    .Include(m => m.CourseFeatures)
+                    .Include(m => m.CourseFeature)
                     .Where(m=>m.CategoryId == categoryId)
                     .Take(newTake)
                     .ToListAsync();

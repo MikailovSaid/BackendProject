@@ -23,7 +23,7 @@ namespace BackendProject.Controllers
         }
         public async Task<IActionResult> CourseDetail(int id)
         {
-            Course courses = await _context.Courses.Where(m=>m.Id == id).Include(m=>m.CourseFeatures).FirstOrDefaultAsync();
+            Course courses = await _context.Courses.Where(m=>m.Id == id).Include(m=>m.CourseFeature).FirstOrDefaultAsync();
             CourseFeature courseFeatures = await _context.CourseFeatures.Where(m => m.CourseId == id).FirstOrDefaultAsync();
             List<Category> categories = await _context.Categories.ToListAsync();
 
