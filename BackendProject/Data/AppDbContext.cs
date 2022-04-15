@@ -21,5 +21,8 @@ namespace BackendProject.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<CourseFeature> CourseFeatures { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<VideoTour> VideoTours { get; set; }
+        public DbSet<NoticeBoard> NoticeBoards { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

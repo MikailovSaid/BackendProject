@@ -1,0 +1,39 @@
+﻿@model VideoTour
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="header d-flex justify-content-between mt-3">
+            <h3>Video tour</h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Link
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h5>@Model.VideoLink</h5>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@Model.Id">
+                                <i class="mdi mdi-table-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

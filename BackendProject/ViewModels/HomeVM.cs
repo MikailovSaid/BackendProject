@@ -10,6 +10,7 @@ namespace BackendProject.ViewModels
     {
         public List<Sliders> Sliders { get; set; }
         public List<ServiceArea> ServiceAreas { get; set; }
+        public List<Event> Events { get; set; }
 
     }
 }

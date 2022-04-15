@@ -1,0 +1,70 @@
+﻿@model CourseVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label asp-for="Name"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Name" maxlength="500" placeholder="Course name">
+
+            <label asp-for="Desc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Desc" maxlength="500" placeholder="Course decription">
+
+            <label asp-for="AboutCourse"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="AboutCourse" maxlength="500" placeholder="Course about">
+
+            <label asp-for="AboutDesc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="AboutDesc" maxlength="500" placeholder="Course about description">
+
+            <label asp-for="ApplyCourse"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="ApplyCourse" maxlength="500" placeholder="Course apply">
+
+            <label asp-for="ApplyDesc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="ApplyDesc" maxlength="500" placeholder="Course apply description">
+
+            <label asp-for="CertificationCourse"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="CertificationCourse" maxlength="500" placeholder="Course certification">
+
+            <label asp-for="CertificationDesc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="CertificationDesc" maxlength="500" placeholder="Course certification description">
+
+            <h5>Course feature:</h5>
+            <label asp-for="StartDate"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="StartDate" maxlength="500" placeholder="Course start date">
+
+            <label asp-for="Duration"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Duration" maxlength="500" placeholder="Course duration">
+
+            <label asp-for="ClassDuration"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="ClassDuration" maxlength="500" placeholder="Course class duration">
+
+            <label asp-for="SkillLevel"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="SkillLevel" maxlength="500" placeholder="Course skill level">
+
+            <label asp-for="Language"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Language" maxlength="500" placeholder="Course language">
+
+            <label asp-for="StudentsCount"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="StudentsCount" maxlength="500" placeholder="Course students count">
+
+            <label asp-for="Assesments"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Assesments" maxlength="500" placeholder="Course assesments">
+
+            <label asp-for="Price"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Price" maxlength="500" placeholder="Course price">
+
+            <div class="form-group" style="width:300px;">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

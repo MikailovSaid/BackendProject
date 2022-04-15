@@ -121,9 +121,95 @@ namespace BackendProject.Areas.AdminArea.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Edit(int id)
+        {
+            var course = await GetCourseById(id);
+            if (course is null) return NotFound();
+            var courseFeature = await _context.CourseFeatures.FirstOrDefaultAsync(m => m.CourseId == id);
+            CourseVM courseVM = new CourseVM
+            {
+                //Id = course.Id,
+                Name = course.Name,
+                AboutCourse = course.AboutCourse,
+                AboutDesc = course.AboutDesc,
+                ApplyCourse = course.ApplyCourse,
+                ApplyDesc = course.ApplyDesc,
+                CertificationCourse = course.CertificationCourse,
+                CertificationDesc = course.CertificationDesc,
+                CategoryId = course.CategoryId,
+                StartDate = courseFeature.StartDate,
+                Duration = courseFeature.Duration,
+                ClassDuration =  courseFeature.ClassDuration,
+                SkillLevel = courseFeature.SkillLevel,
+                Language = courseFeature.Language,
+                StudentsCount = courseFeature.StudentsCount,
+                Assesments = courseFeature.Assesments,
+                Price = courseFeature.Price
+            };
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+            return View(courseVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, CourseVM courseVM)
+        {
+            ViewBag.categories = await GetCategoriesByCourses();
+            if (!ModelState.IsValid) return View(courseVM);
+            Course course = await _context.Courses
+                .Include(m => m.Category)
+                .Include(m => m.CourseFeature)
+                .FirstOrDefaultAsync(m=>m.Id == id);
+            if (course is null) return NotFound();
+
+
+
+            if (courseVM.Photo != null)
+            {
+                string path = Helper.GetFilePath(_env.WebRootPath, "assets/img/course", course.Image);
+                Helper.DeleteFile(path);
+
+
+                string fileName = Guid.NewGuid().ToString() + "_" + courseVM.Photo.FileName;
+
+                string newPath = Helper.GetFilePath(_env.WebRootPath, "assets/img/course", fileName);
+
+                await courseVM.Photo.SaveFile(newPath);
+
+                course.Image = fileName;
+            }
+
+            course.Name = courseVM.Name;
+            course.AboutCourse = courseVM.AboutCourse;
+            course.AboutDesc = courseVM.AboutDesc;
+            course.ApplyCourse = courseVM.ApplyCourse;
+            course.ApplyDesc = courseVM.ApplyDesc;
+            course.CertificationCourse = courseVM.CertificationCourse;
+            course.CertificationDesc = courseVM.CertificationDesc;
+            course.CategoryId = courseVM.CategoryId;
+
+            course.CourseFeature.StartDate = courseVM.StartDate;
+            course.CourseFeature.Duration = courseVM.Duration;
+            course.CourseFeature.ClassDuration = courseVM.ClassDuration;
+            course.CourseFeature.SkillLevel = courseVM.SkillLevel;
+            course.CourseFeature.Language = courseVM.Language;
+            course.CourseFeature.StudentsCount = courseVM.StudentsCount;
+            course.CourseFeature.Assesments = courseVM.Assesments;
+            course.CourseFeature.Price = courseVM.Price;
+
+            await _context.SaveChangesAsync();
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+            return RedirectToAction(nameof(Index));
+        }
+
         private async Task<Course> GetCourseById(int id)
         {
             return await _context.Courses.FindAsync(id);
+        }
+        private async Task<SelectList> GetCategoriesByCourses()
+        {
+            var categories = await _context.Categories.ToListAsync();
+            return new SelectList(categories, "Id", "Name");
         }
     }
 }

@@ -21,11 +21,13 @@ namespace BackendProject.Controllers
         {
             List<Sliders> sliders = await _context.Sliders.ToListAsync();
             List<ServiceArea> serviceAreas = await _context.ServiceAreas.ToListAsync();
+            List<Event> events = await _context.Events.Take(4).ToListAsync();
 
             HomeVM homeVM = new HomeVM()
             {
                 Sliders = sliders,
-                ServiceAreas = serviceAreas
+                ServiceAreas = serviceAreas,
+                Events = events
             };
 
             return View(homeVM);

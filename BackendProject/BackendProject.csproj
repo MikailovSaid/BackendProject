@@ -13,6 +13,10 @@
     <Compile Remove="Migrations\20220413055454_CreateCourseTable.Designer.cs" />
     <Compile Remove="Migrations\20220413072753_CreateCourseFeatureTable.cs" />
     <Compile Remove="Migrations\20220413072753_CreateCourseFeatureTable.Designer.cs" />
+    <Compile Remove="Migrations\20220415043426_CreateNoticeAreaTables.cs" />
+    <Compile Remove="Migrations\20220415043426_CreateNoticeAreaTables.Designer.cs" />
+    <Compile Remove="Migrations\20220415072420_CreateTable.cs" />
+    <Compile Remove="Migrations\20220415072420_CreateTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

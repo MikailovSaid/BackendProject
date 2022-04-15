@@ -1,0 +1,15 @@
+﻿@model VideoTour
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="VideoLink"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="VideoLink" maxlength="500" placeholder="Video link">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
