@@ -1,0 +1,13 @@
+﻿@model NoticeBoard
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container">
+    <h3 class="mt-3">Notice board detail</h3>
+    <div class="row mt-5">
+        <h5 class="mt-2">@Model.Date</h5>
+        <p>@Model.Desc</p>
+    </div>
+    <a asp-action="Index" class="btn btn-primary mt-3">Go back</a>
+</div>

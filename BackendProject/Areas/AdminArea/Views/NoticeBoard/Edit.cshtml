@@ -1,0 +1,18 @@
+﻿@model NoticeBoard
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Date"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Date" maxlength="500" placeholder="Service area header">
+
+            <label asp-for="Desc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Desc" maxlength="500" placeholder="Service area Decription">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
