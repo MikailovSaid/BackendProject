@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 
 namespace BackendProject.Models
 {
-    public class Event
+    public class Speakers
     {
         public int Id { get; set; }
         public string Image { get; set; }
         public string Name { get; set; }
-        public string Date { get; set; }
-        public string Address { get; set; }
-        public string Desc { get; set; }
-        public string Venue { get; set; }
-        public string Time { get; set; }
-        public List<Speakers> Speakers { get; set; }
-
+        public string Profession { get; set; }
+        public int EventId { get; set; }
+        public Event Event { get; set; }
         [Required]
         [NotMapped]
         public IFormFile Photo { get; set; }

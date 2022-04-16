@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        @await Component.InvokeAsync("Course", new { take = 3})
+        @await Component.InvokeAsync("Course", new { take = 3 })
     </div>
 </div>
 <!-- Courses Area End -->
@@ -91,17 +91,17 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="single-event mb-35">
                         <div class="event-img">
-                            <a href="event-details.html"><img src="~/assets/img/event/@item.Image" alt="event"></a>
+                            <a asp-controller="Event" asp-action="EventDetail" asp-route-id="@item.Id"><img src="~/assets/img/event/@item.Image" alt="event"></a>
                         </div>
                         <div class="event-content text-left">
                             <h3>@item.Date</h3>
-                            <h4><a href="event-details.html">@item.Name</a></h4>
+                            <h4><a asp-controller="Event" asp-action="EventDetail" asp-route-id="@item.Id">@item.Name</a></h4>
                             <ul>
                                 <li><i class="fa fa-clock-o"></i>@item.Time</li>
                                 <li><i class="fa fa-map-marker"></i>@item.Address</li>
                             </ul>
                             <div class="event-content-right">
-                                <a class="default-btn" href="event-details.html">join now</a>
+                                <a class="default-btn" asp-controller="Event" asp-action="EventDetail" asp-route-id="@item.Id">join now</a>
                             </div>
                         </div>
                     </div>
@@ -117,18 +117,7 @@
         <div class="row">
             <div class="testimonial-owl owl-theme owl-carousel">
                 <div class="col-md-8 col-md-offset-2 col-sm-12">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img/">
-                                <img src="~/assets/img/testimonial/testimonial.jpg" alt="testimonial" style="height:100px; width:100px;">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
-                            </div>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("TestimotionalArea")
                 </div>
             </div>
         </div>
@@ -208,34 +197,3 @@
     </div>
 </div>
 <!-- Blog Area End -->
-<!-- Subscribe Start -->
-<div class="subscribe-area pt-60 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="subscribe-content section-title text-center">
-                    <h2>subscribe our newsletter</h2>
-                    <p>I must explain to you how all this mistaken idea </p>
-                </div>
-                <div class="newsletter-form mc_embed_signup">
-                    <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll" class="mc-form">
-                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your e-mail address" required>
-                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                            <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                            <button id="mc-embedded-subscribe" class="default-btn" type="submit" name="subscribe"><span>subscribe</span></button>
-                        </div>
-                    </form>
-                    <!-- mailchimp-alerts Start -->
-                    <div class="mailchimp-alerts">
-                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                        <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                        <div class="mailchimp-error"></div><!-- mailchimp-error end -->
-                    </div>
-                    <!-- mailchimp-alerts end -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Subscribe End -->

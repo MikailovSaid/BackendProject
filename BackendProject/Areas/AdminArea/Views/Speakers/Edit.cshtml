@@ -1,0 +1,28 @@
+﻿@model Speakers
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label asp-for="Name"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Name" maxlength="500" placeholder="Name">
+
+            <label asp-for="Profession"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Profession" maxlength="500" placeholder="Profession">
+
+
+            <div class="form-group" style="width:300px;">
+                <label asp-for="EventId"></label>
+                <select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId"></select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

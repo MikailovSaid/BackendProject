@@ -33,6 +33,7 @@
     <!-- Header Area Start -->
     @await Component.InvokeAsync("Header")
     @RenderBody()
+    @await Component.InvokeAsync("SubscribeArea")
     @await Component.InvokeAsync("Footer")
     <!-- Footer End -->
 

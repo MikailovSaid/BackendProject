@@ -1,0 +1,29 @@
+﻿@model TestimotionalArea
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container mt-5">
+    <div class="img">
+        <img src="~/assets/img/testimonial/@Model.Image" alt="slider" style="width:250px;height:250px" />
+    </div>
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label asp-for="Name"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Name" maxlength="500" placeholder="Name">
+
+            <label asp-for="Position"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Position" maxlength="500" placeholder="Position">
+
+            <label asp-for="Desc"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Desc" maxlength="500" placeholder="Decription">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

@@ -1,4 +1,4 @@
-﻿@model CourseVM
+﻿@model EventVM
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
     <div class="banner-area text-center">
@@ -7,7 +7,7 @@
                 <div class="col-xs-12">
                     <div class="banner-content-wrapper">
                         <div class="banner-content">
-                            <h2>courses details</h2>
+                            <h2>event / details</h2>
                         </div>
                     </div>
                 </div>
@@ -16,74 +16,68 @@
     </div>
 </div>
 <!-- Banner Area End -->
-<!-- Blog Start -->
-<div class="courses-details-area blog-area pt-150 pb-140">
+<!-- Event Details Start -->
+<div class="event-details-area blog-area pt-150 pb-140">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="courses-details">
-                        <div class="courses-details-img">
-                            <img src="~/assets/img/course/@Model.Courses.Image" alt="courses-details" style="height:411px; width:710px;">
-                        </div>
-                        
-                        <div class="course-details-content">
-                            <h2>@Model.Courses.Name</h2>
-                            <p>@Model.Courses.Desc</p>
-                            <div class="course-details-left">
-                                <div class="single-course-left">
-                                    <h3>@Model.Courses.AboutCourse</h3>
-                                    <p>@Model.Courses.AboutDesc</p>
-                                </div>
-                                <div class="single-course-left">
-                                    <h3>@Model.Courses.ApplyCourse</h3>
-                                    <p>@Model.Courses.ApplyDesc</p>
-                                </div>
-                                <div class="single-course-left">
-                                    <h3>@Model.Courses.CertificationCourse</h3>
-                                    <p class="margin">@Model.Courses.CertificationDesc</p>
-                                </div>
-                            </div>
-                            <div class="course-details-right">
-                                <h3>COURSE FEATURES</h3>
-                                <ul>
-                                    <li>starts <span>@Model.CourseFeatures.StartDate</span></li>
-                                    <li>duration <span>@Model.CourseFeatures.Duration</span></li>
-                                    <li>class duration <span>@Model.CourseFeatures.ClassDuration</span></li>
-                                    <li>skill level <span>@Model.CourseFeatures.SkillLevel</span></li>
-                                    <li>language <span>@Model.CourseFeatures.Language</span></li>
-                                    <li>students <span>@Model.CourseFeatures.StudentsCount</span></li>
-                                    <li>assesments <span>@Model.CourseFeatures.Assesments</span></li>
-                                </ul>
-                                <h3 class="red">course fee @Model.CourseFeatures.Price</h3>
-                            </div>
-                        </div>
-                     
-                        <div class="reply-area">
-                            <h3>LEAVE A REPLY</h3>
-                            <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
-                            <form id="contact-form" action="http://demo.devitems.com/eduhome/mail.php" method="post">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>Name</p>
-                                        <input type="text" name="name" id="name">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <p>Email</p>
-                                        <input type="text" name="email" id="email">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <p>Subject</p>
-                                        <input type="text" name="subject" id="subject">
-                                        <p>Massage</p>
-                                        <textarea name="message" id="message" cols="15" rows="10"></textarea>
-                                    </div>
-                                </div>
-                                <a class="reply-btn" href="#" data-text="send"><span>send message</span></a>
-                                <p class="form-messege"></p>
-                            </form>
+                <div class="event-details">
+                    <div class="event-details-img">
+                        <img src="~/assets/img/event/@Model.Event.Image" alt="event-details" style="width:770px; height:358px;">
+                        <div class="event-date">
+                            <h3>@Model.Event.Date</h3>
                         </div>
                     </div>
+                    <div class="event-details-content">
+                        <h2>@Model.Event.Name</h2>
+                        <ul>
+                            <li><span>time : </span>@Model.Event.Time</li>
+                            <li><span>venue : </span>@Model.Event.Venue, @Model.Event.Address</li>
+                        </ul>
+                        <p>@Model.Event.Desc</p>
+                        <div class="speakers-area fix">
+                            <h4>speakers</h4>
+                            @foreach (var speaker in Model.Speakers)
+                            {
+                                <div class="single-speaker">
+                                    <div class="speaker-img">
+                                        <img src="~/assets/img/event/@speaker.Image" alt="speaker">
+                                    </div>
+                                    <div class="speaker-name">
+                                        <h5>@speaker.Name</h5>
+                                        <p>@speaker.Profession</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="reply-area">
+                        <h3>LEAVE A REPLY</h3>
+                        <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+                        <form id="contact-form" action="http://demo.devitems.com/eduhome/mail.php" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Name</p>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Email</p>
+                                    <input type="text" name="email" id="email">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Subject</p>
+                                    <input type="text" name="subject" id="subject">
+                                    <p>Massage</p>
+                                    <textarea name="message" id="message" cols="15" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <a class="reply-btn" href="#" data-text="send"><span>send message</span></a>
+                            <p class="form-messege"></p>
+                        </form>
+                    </div>
+                </div>
             </div>
+
             <div class="col-md-4">
                 <div class="blog-sidebar right">
                     <div class="single-blog-widget mb-50">
@@ -100,11 +94,10 @@
                     <div class="single-blog-widget mb-50">
                         <h3>categories</h3>
                         <ul>
-                            @foreach (var item in Model.Categories)
+                            @foreach (var category in Model.Categories)
                             {
-                                <li><a asp-controller="Course" asp-action="Index" asp-route-categoryId="@item.Id">@item.Name</a></li>
+                                <li><a asp-controller="Course" asp-action="Index" asp-route-categoryId="@category.Id">@category.Name</a></li>
                             }
-
                         </ul>
                     </div>
                     <div class="single-blog-widget mb-50">
@@ -174,4 +167,4 @@
         </div>
     </div>
 </div>
-<!-- Blog End -->
+<!-- Event Details End -->
