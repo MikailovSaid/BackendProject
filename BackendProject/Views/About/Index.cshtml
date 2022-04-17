@@ -1,0 +1,37 @@
+﻿<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>about us</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- About Start -->
+@await Component.InvokeAsync("AboutArea");
+<!-- About End -->
+<!-- Teacher Start -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="section-title text-center">
+            <img src="~/assets/img/icon/section.png" alt="title">
+            <h2>meet our teachers</h2>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("Teacher", 4);
+<!-- Teacher End -->
+<!-- Testimonial Area Start -->
+@await Component.InvokeAsync("TestimotionalArea");
+<!-- Testimonial Area End -->
+<!-- Notice Start -->
+@await Component.InvokeAsync("NoticeArea");
+<!-- Notice End -->

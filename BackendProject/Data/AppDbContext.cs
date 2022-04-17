@@ -28,5 +28,7 @@ namespace BackendProject.Data
         public DbSet<TestimotionalArea> TestimotionalAreas { get; set; }
         public DbSet<SubscribeArea> SubscribeAreas { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<TeacherContact> TeacherContacts { get; set; }
+        public DbSet<TeacherSkills> TeacherSkills { get; set; }
     }
 }

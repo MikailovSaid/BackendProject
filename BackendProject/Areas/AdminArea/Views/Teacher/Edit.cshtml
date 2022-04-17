@@ -1,0 +1,64 @@
+﻿@model TeacherVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" style="width:300px" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+
+            <label asp-for="Name"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Name" maxlength="500">
+
+            <label asp-for="Profession"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Profession" maxlength="500">
+
+            <label asp-for="About"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="About" maxlength="500">
+
+            <label asp-for="Degree"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Degree" maxlength="500">
+
+            <label asp-for="Experience"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Experience" maxlength="500">
+
+            <label asp-for="Hobbies"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Hobbies" maxlength="500">
+
+            <label asp-for="Faculty"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Faculty" maxlength="500">
+
+            <label asp-for="Email"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Email" maxlength="500">
+
+            <label asp-for="Phone"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Phone" maxlength="500">
+
+            <label asp-for="Skype"></label>
+            <input type="text" class="form-control" style="width:300px" asp-for="Skype" maxlength="500">
+
+            <label asp-for="Language"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="Language" maxlength="500">
+
+            <label asp-for="TeamLeader"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="TeamLeader" maxlength="500">
+
+            <label asp-for="Development"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="Development" maxlength="500">
+
+            <label asp-for="Design"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="Design" maxlength="500">
+
+            <label asp-for="Innovation"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="Innovation" maxlength="500">
+
+            <label asp-for="Communication"></label>
+            <input type="number" class="form-control" style="width:300px" asp-for="Communication" maxlength="500">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

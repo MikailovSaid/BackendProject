@@ -66,13 +66,7 @@
 </div>
 <!-- Courses Area End -->
 <!-- Notice Start -->
-<section class="notice-area two pt-140">
-    <div class="container">
-        <div class="row">
-            @await Component.InvokeAsync("NoticeArea")
-        </div>
-    </div>
-</section>
+@await Component.InvokeAsync("NoticeArea")
 <!-- Notice End -->
 <!-- Event Area Start -->
 <div class="event-area two text-center pt-100 pb-145">
@@ -112,17 +106,7 @@
 </div>
 <!-- Event Area End -->
 <!-- Testimonial Area Start -->
-<div class="testimonial-area pt-110 pb-105 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-md-8 col-md-offset-2 col-sm-12">
-                    @await Component.InvokeAsync("TestimotionalArea")
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("TestimotionalArea")
 <!-- Testimonial Area End -->
 <!-- Blog Area Start -->
 <div class="blog-area pt-150 pb-150">

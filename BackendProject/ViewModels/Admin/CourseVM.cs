@@ -11,7 +11,6 @@ namespace BackendProject.ViewModels.Admin
 {
     public class CourseVM
     {
-        //public int Id { get; set; }
         public string Name { get; set; }
         public string Desc { get; set; }
         public string AboutCourse { get; set; }

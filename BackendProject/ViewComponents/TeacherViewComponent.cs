@@ -17,9 +17,11 @@ namespace BackendProject.ViewComponents
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int? take)
         {
-            List<Teacher> teachers = await _context.Teachers.ToListAsync();
+            var newTake = take ?? _context.Courses.Count();
+
+            List<Teacher> teachers = await _context.Teachers.Take(newTake).ToListAsync();
             return (await Task.FromResult(View(teachers)));
         }
     }
