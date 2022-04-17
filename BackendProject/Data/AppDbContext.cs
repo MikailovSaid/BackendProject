@@ -1,4 +1,5 @@
 ﻿using BackendProject.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BackendProject.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -30,5 +31,6 @@ namespace BackendProject.Data
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherContact> TeacherContacts { get; set; }
         public DbSet<TeacherSkills> TeacherSkills { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }
